@@ -15,8 +15,6 @@ const signToken = (user => JWT.sign({
 module.exports = {
   // 3
   signup: async (req, res, next) => {
-    console.log('signup() called from controller');
-    console.log(req.value);
     const { email, password, confirmPassword } = req.body;
     if (password === confirmPassword) {
       const foundUser = await User.findOne({ email }).catch(err => console.log(err));
