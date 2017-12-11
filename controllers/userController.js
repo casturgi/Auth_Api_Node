@@ -41,7 +41,6 @@ module.exports = {
     const foundUser = await User.findOne({ email }).catch(() => {
       res.status(404).json({ error: 'No user found with this email address' });
     });
-    console.log(`${foundUser.password} ${password}`);
     if (foundUser.isValidPassword(password)) {
       const token = signToken(req.user);
       res.status(200).json({ token });

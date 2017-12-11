@@ -3,7 +3,7 @@ const router = require('express-promise-router')();
 const passport = require('passport');
 const passportConf = require('../passport');
 const Joi = require('joi');
-const UsersController = require('../controllers/users');
+const UsersController = require('../controllers/userController');
 
 const helper = {
   validateBody: schema => (req, res, next) => {
